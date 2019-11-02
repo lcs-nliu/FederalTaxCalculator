@@ -49,6 +49,26 @@ class ViewController: UIViewController {
         
         // Calculate tax owing using a switch statement
         
+        switch incomeDouble {
+        case 0...47_630:
+            // Multiply income by tax rate for this range, round it, and conver it to string type
+            let federalTax = incomeDouble * 0.15
+            let federalTaxRounded = (round(100*federalTax)/100)
+            let federalTaxString = String(federalTaxRounded)
+                   
+            // Display in label
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            
+        default:
+            // Multiply income by tax rate for this range, round it, and conver it to string type
+            let federalTax = incomeDouble * 0.33
+            let federalTaxRounded = (round(100*federalTax)/100)
+            let federalTaxString = String(federalTaxRounded)
+                        
+            // Display in label
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+        
+        }
     }
 }
 
