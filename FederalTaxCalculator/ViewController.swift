@@ -32,18 +32,21 @@ class ViewController: UIViewController {
         // Extract text from the name text field and check that name isn't an empty string
         guard let nameString = nameTextField.text, nameString != "" else {
             nameTaxDisplay.text = "Error, please enter your name."
+            taxRateDisplay.text = ""
             return
         }
         
         // Extract text from income text field and check that income isn't an empty string
         guard let incomeString = incomeTextField.text, incomeString != "" else {
             nameTaxDisplay.text = "Error, please enter your annual income."
+            taxRateDisplay.text = ""
             return
         }
         
         // Check if gross annual income string can be converted into a double data type
         guard let incomeDouble = Double(incomeString) else {
             nameTaxDisplay.text = "Error, please enter a number in annual income."
+            taxRateDisplay.text = ""
             return
         }
         
@@ -93,6 +96,7 @@ class ViewController: UIViewController {
             // Display each text to the view in each label
             nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
             taxRateDisplay.text = "Effective tax rate is: 29%."
+            
         // default case is income over 210,372 $
         default:
             // Multiply income by tax rate for this range
