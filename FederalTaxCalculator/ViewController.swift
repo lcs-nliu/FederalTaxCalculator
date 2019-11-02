@@ -51,22 +51,59 @@ class ViewController: UIViewController {
         
         switch incomeDouble {
         case 0...47_630:
-            // Multiply income by tax rate for this range, round it, and conver it to string type
+            // Multiply income by tax rate for this range
             let federalTax = incomeDouble * 0.15
+            // Round to two decimal places
             let federalTaxRounded = (round(100*federalTax)/100)
+            // Convert to string data type
             let federalTaxString = String(federalTaxRounded)
-                   
-            // Display in label
+            // Display each text to the view in each label
             nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            taxRateDisplay.text = "Effective tax rate is: 15%."
             
-        default:
-            // Multiply income by tax rate for this range, round it, and conver it to string type
-            let federalTax = incomeDouble * 0.33
+        case 47_631...95_259:
+            // Multiply income by tax rate for this range
+            let federalTax = incomeDouble * 0.205
+            // Round to two decimal places
             let federalTaxRounded = (round(100*federalTax)/100)
+            // Convert to string data type
             let federalTaxString = String(federalTaxRounded)
-                        
-            // Display in label
+            // Display each text to the view in each label
             nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            taxRateDisplay.text = "Effective tax rate is: 20.5%."
+            
+        case 95_260...147_667:
+            // Multiply income by tax rate for this range
+            let federalTax = incomeDouble * 0.26
+            // Round to two decimal places
+            let federalTaxRounded = (round(100*federalTax)/100)
+            // Convert to string data type
+            let federalTaxString = String(federalTaxRounded)
+            // Display each text to the view in each label
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            taxRateDisplay.text = "Effective tax rate is: 26%."
+            
+        case 147_668...210,371:
+            // Multiply income by tax rate for this range
+            let federalTax = incomeDouble * 0.29
+            // Round to two decimal places
+            let federalTaxRounded = (round(100*federalTax)/100)
+            // Convert to string data type
+            let federalTaxString = String(federalTaxRounded)
+            // Display each text to the view in each label
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            taxRateDisplay.text = "Effective tax rate is: 29%."
+
+        default:
+            // Multiply income by tax rate for this range
+            let federalTax = incomeDouble * 0.33
+            // Round to two decimal places
+            let federalTaxRounded = (round(100*federalTax)/100)
+            // Convert to string data type
+            let federalTaxString = String(federalTaxRounded)
+            // Display each text to the view in each label
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
+            taxRateDisplay.text = "Effective tax rate is: 33%."
         
         }
     }
