@@ -41,6 +41,14 @@ class ViewController: UIViewController {
             return
         }
         
+        // Check if gross annual income string can be converted into a double data type
+        guard let incomeDouble = Double(incomeString) else {
+            nameTaxDisplay.text = "Error, please enter a number in annual income."
+            return
+        }
+        
+        // Calculate tax owing using a switch statement
+        
     }
 }
 
