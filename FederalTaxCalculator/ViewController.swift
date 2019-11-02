@@ -83,7 +83,7 @@ class ViewController: UIViewController {
             nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
             taxRateDisplay.text = "Effective tax rate is: 26%."
             
-        case 147_668...210,371:
+        case 147_668...210_371:
             // Multiply income by tax rate for this range
             let federalTax = incomeDouble * 0.29
             // Round to two decimal places
@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             // Display each text to the view in each label
             nameTaxDisplay.text = "\(nameString) your federal tax owing is $\(federalTaxString)."
             taxRateDisplay.text = "Effective tax rate is: 29%."
-
+        // default case is income over 210,372 $
         default:
             // Multiply income by tax rate for this range
             let federalTax = incomeDouble * 0.33
