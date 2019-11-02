@@ -28,6 +28,19 @@ class ViewController: UIViewController {
     // MARK: Methods
     // Created an action for when calculate tax owing button is pressed
     @IBAction func calculateButtonPressed(_ sender: Any) {
+    
+        // Extract text from the name text field and check that name isn't an empty string
+        guard let nameString = nameTextField.text, nameString != "" else {
+            nameTaxDisplay.text = "Error, please enter your name."
+            return
+        }
+        
+        // Extract text from income text field and check that income isn't an empty string
+        guard let incomeString = incomeTextField.text, incomeString != "" else {
+            nameTaxDisplay.text = "Error, please enter your annual income."
+            return
+        }
+        
     }
 }
 
