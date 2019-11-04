@@ -11,6 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: Properties
+    // Declare variables that I use later in my switch statement
+    // Define tax for first 47,630$ of income eg. (7,144.5 is 47,630 * 0.15)
+    let federalTax1 = 7144.5
+    // Define tax for the next 47,629$ of income
+    let federalTax2 = 9763.945
+    // Define tax for the next 52,408$ of income
+    let federalTax3 = 13626.08
+    // Define tax for the next 62,704$ of income
+    let federalTax4 = 18184.16
+    
     // Connect name text field to controller with an outlet
     @IBOutlet weak var nameTextField: UITextField!
     // Connect income text field to controller with an outlet
@@ -44,8 +54,8 @@ class ViewController: UIViewController {
         }
         
         // Check if gross annual income string can be converted into a double data type
-        guard let incomeDouble = Double(incomeString) else {
-            nameTaxDisplay.text = "Error, please enter a number in annual income."
+        guard let incomeDouble = Double(incomeString), incomeDouble > 0 else {
+            nameTaxDisplay.text = "Error, please enter a number in annual income. It must be positive."
             taxRateDisplay.text = ""
             return
         }
@@ -69,12 +79,10 @@ class ViewController: UIViewController {
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 47_631...95_259:
-            // Define tax for 47,630 (7,144.5 is 47,630 * 0.15)
-            let federalTax1 = 7144.5
             // Multiply income over 47,630 by the effective tax rate
-            let federalTax2 = (incomeDouble-47_630) * 0.205
+            let federalTaxForThisRange = (incomeDouble-47_630) * 0.205
             // Add the two tax amounts together
-            let totalTax = federalTax1 + federalTax2
+            let totalTax = federalTax1 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
             // Convert to string data type
@@ -88,14 +96,10 @@ class ViewController: UIViewController {
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 95_260...147_667:
-            // Define tax for first 47,630$ of income eg. (7,144.5 is 47,630 * 0.15)
-            let federalTax1 = 7144.5
-            // Define tax for the next 47,629$ of income
-            let federalTax2 = 9763.945
             // Multiply income over 95,259 by the effective tax rate
-            let federalTax3 = (incomeDouble-95259) * 0.26
+            let federalTaxForThisRange = (incomeDouble-95259) * 0.26
             // Add the two tax amounts together
-            let totalTax = federalTax1 + federalTax2 + federalTax3
+            let totalTax = federalTax1 + federalTax2 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
             // Convert to string data type
@@ -109,16 +113,10 @@ class ViewController: UIViewController {
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 147_668...210_371:
-            // Define tax for first 47,630$ of income eg. (7,144.5 is 47,630 * 0.15)
-            let federalTax1 = 7144.5
-            // Define tax for the next 47,629$ of income
-            let federalTax2 = 9763.945
-            // Define tax for the next 52,408$ of income
-            let federalTax3 = 13626.08
             // Multiply income over 95,259 by the effective tax rate
-            let federalTax4 = (incomeDouble-147667) * 0.29
+            let federalTaxForThisRange = (incomeDouble-147667) * 0.29
             // Add the two tax amounts together
-            let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTax4
+            let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
             // Convert to string data type
@@ -133,18 +131,10 @@ class ViewController: UIViewController {
             
         // default case is income over 210,372 $
         default:
-            // Define tax for first 47,630$ of income eg. (7,144.5 is 47,630 * 0.15)
-             let federalTax1 = 7144.5
-             // Define tax for the next 47,629$ of income
-             let federalTax2 = 9763.945
-             // Define tax for the next 52,408$ of income
-             let federalTax3 = 13626.08
-             // Define tax for the next 62,704$ of income
-             let federalTax4 = 18184.16
              // Multiply income over 95,259 by the effective tax rate
-             let federalTax5 = (incomeDouble-210371) * 0.33
+             let federalTaxForThisRange = (incomeDouble-210371) * 0.33
              // Add the two tax amounts together
-             let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTax4 + federalTax5
+             let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTax4 + federalTaxForThisRange
              // Round to two decimal places
              let totalTaxRounded = (round(100*totalTax)/100)
              // Convert to string data type
