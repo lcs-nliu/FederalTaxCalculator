@@ -68,14 +68,12 @@ class ViewController: UIViewController {
             let totalTax = incomeDouble * 0.15
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
-            // Convert to string data type
-            let totalTaxString = String(totalTaxRounded)
             // Find the tax rate by dividing total tax by income (multiplying it by 100 because it is a percentage)
             let taxRate = totalTax/incomeDouble*100
             // Round tax rate to one decimal place
             let taxRateRounded = (round(10*taxRate)/10)
             // Display each text to the view in each label
-            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxString)$."
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxRounded)$."
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 47_631...95_259:
@@ -85,14 +83,12 @@ class ViewController: UIViewController {
             let totalTax = federalTax1 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
-            // Convert to string data type
-            let totalTaxString = String(totalTaxRounded)
             // Find the tax rate by dividing total tax by income (multiplying it by 100 because it is a percentage)
             let taxRate = totalTax/incomeDouble*100
             // Round tax rate to one decimal place
             let taxRateRounded = (round(10*taxRate)/10)
             // Display each text to the view in each label
-            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxString)$."
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxRounded)$."
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 95_260...147_667:
@@ -102,14 +98,12 @@ class ViewController: UIViewController {
             let totalTax = federalTax1 + federalTax2 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
-            // Convert to string data type
-            let totalTaxString = String(totalTaxRounded)
             // Find the tax rate by dividing total tax by income (multiplying it by 100 because it is a percentage)
             let taxRate = totalTax/incomeDouble*100
             // Round tax rate to one decimal place
             let taxRateRounded = (round(10*taxRate)/10)
             // Display each text to the view in each label
-            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxString)$."
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxRounded)$."
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         case 147_668...210_371:
@@ -119,14 +113,12 @@ class ViewController: UIViewController {
             let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTaxForThisRange
             // Round to two decimal places
             let totalTaxRounded = (round(100*totalTax)/100)
-            // Convert to string data type
-            let totalTaxString = String(totalTaxRounded)
             // Find the tax rate by dividing total tax by income (multiplying it by 100 because it is a percentage)
             let taxRate = totalTax/incomeDouble*100
             // Round tax rate to one decimal place
             let taxRateRounded = (round(10*taxRate)/10)
             // Display each text to the view in each label
-            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxString)$."
+            nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxRounded)$."
             taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
             
         // default case is income over 210,372 $
@@ -137,14 +129,12 @@ class ViewController: UIViewController {
              let totalTax = federalTax1 + federalTax2 + federalTax3 + federalTax4 + federalTaxForThisRange
              // Round to two decimal places
              let totalTaxRounded = (round(100*totalTax)/100)
-             // Convert to string data type
-             let totalTaxString = String(totalTaxRounded)
              // Find the tax rate by dividing total tax by income (multiplying it by 100 because it is a percentage)
              let taxRate = totalTax/incomeDouble*100
              // Round tax rate to one decimal place
              let taxRateRounded = (round(10*taxRate)/10)
              // Display each text to the view in each label
-             nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxString)$."
+             nameTaxDisplay.text = "\(nameString) your federal tax owing is \(totalTaxRounded)$."
              taxRateDisplay.text = "Effective tax rate is: \(taxRateRounded)%."
         }
     }
